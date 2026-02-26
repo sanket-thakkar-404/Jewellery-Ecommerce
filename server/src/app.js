@@ -87,8 +87,10 @@ app.use('/api/categories', categoryRoutes);
 app.use('/api/enquiries', enquiryLimiter, enquiryRoutes);
 app.use('/api/admin/dashboard', dashboardRoutes);
 
+
 // ─── Error handling ──────────────────────────────────────────────────────────
 app.use(notFound);
 app.use(errorHandler);
+
 
 module.exports = app;
