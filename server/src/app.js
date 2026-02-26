@@ -28,8 +28,6 @@ app.use(helmet({
 app.use(cors({
     origin: (origin, callback) => {
         const whitelist = (process.env.CLIENT_URL || '').split(',').map((u) => u.trim());
-        // console.log("Whitelist:", whitelist);
-        // console.log("Incoming Origin:", origin);
         if (!origin || whitelist.includes(origin)) {
             callback(null, true);
         } else {
