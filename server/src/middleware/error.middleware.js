@@ -57,7 +57,7 @@ const errorHandler = (err, req, res, next) => {
  * 404 handler — mount before errorHandler
  */
 const notFound = (req, res, next) => {
-    next(ApiError.notFound(`Route ${req.method} ${req.originalUrl} not found`));
+res.send("this is wild card")
 };
 
 module.exports = { errorHandler, notFound };

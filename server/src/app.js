@@ -85,6 +85,9 @@ app.use('/api/categories', categoryRoutes);
 app.use('/api/enquiries', enquiryLimiter, enquiryRoutes);
 app.use('/api/admin/dashboard', dashboardRoutes);
 
+app.use("*name", (req, res) => {
+    res.send("this is wild card")
+})
 
 // ─── Error handling ──────────────────────────────────────────────────────────
 app.use(notFound);
