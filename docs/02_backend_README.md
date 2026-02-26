@@ -73,7 +73,7 @@ The Babulal Jewellers backend exposes a versioned RESTful API (`/api/v1/`) servi
 ### Installation
 
 ```bash
-cd babulal-jewellers/server
+cd server
 
 # Install dependencies
 npm install
@@ -88,7 +88,7 @@ npm run seed:admin
 npm run dev
 ```
 
-API will be available at `http://localhost:5000`.
+API will be available at `http://localhost:3000`.
 
 ---
 
@@ -97,7 +97,7 @@ API will be available at `http://localhost:5000`.
 ```env
 # ── Server ───────────────────────────────────────────
 NODE_ENV=development
-PORT=5000
+PORT=3000
 
 # ── Database ──────────────────────────────────────────
 MONGODB_URI=mongodb://localhost:27017/babulal_jewellers
@@ -135,7 +135,7 @@ STRIPE_SECRET_KEY=sk_test_xxxxx
 STRIPE_WEBHOOK_SECRET=whsec_xxxxx
 
 # ── CORS ──────────────────────────────────────────────
-ALLOWED_ORIGINS=http://localhost:5173,https://babulaljewellers.com
+ALLOWED_ORIGINS=http://localhost:8080,https://babulaljewellers.com
 ```
 
 ---

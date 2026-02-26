@@ -69,13 +69,13 @@ router.get('/enquiries', authenticate, authorize('manager'), getEnquiries);
 // config/permissions.ts
 export const PERMISSIONS = {
   PRODUCT_CREATE: ['admin', 'super_admin'],
-  PRODUCT_UPDATE: ['admin', 'super_admin', 'manager'],
+  PRODUCT_UPDATE: ['admin', 'super_admin'],
   PRODUCT_DELETE: ['super_admin'],
   CATEGORY_MANAGE: ['admin', 'super_admin'],
-  ENQUIRY_VIEW: ['manager', 'admin', 'super_admin'],
+  ENQUIRY_VIEW: ['admin', 'super_admin'],
   ENQUIRY_DELETE: ['super_admin'],
   USER_MANAGE: ['super_admin'],
-  ANALYTICS_VIEW: ['manager', 'admin', 'super_admin'],
+  ANALYTICS_VIEW: [ 'admin', 'super_admin'],
 } as const;
 ```
 
@@ -519,3 +519,5 @@ router.get('/sitemap.xml', async (req, res) => {
 ---
 
 *Advanced Enhancements Guide v1.0 · Babulal Jewellers Engineering*
+
+*created by Sanket Thakkar*

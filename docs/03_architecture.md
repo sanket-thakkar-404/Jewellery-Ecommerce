@@ -450,3 +450,5 @@ EnquirySchema.index({ email: 1 });
 ---
 
 *Architecture document version 1.0 · Babulal Jewellers Engineering*
+
+*created by Sanket Thakkar*

@@ -1,5 +1,6 @@
 const ApiError = require('../utils/ApiError');
 const logger = require('../utils/logger');
+const path = require('path')
 
 /**
  * Centralized error-handling middleware.
@@ -56,8 +57,10 @@ const errorHandler = (err, req, res, next) => {
 /**
  * 404 handler — mount before errorHandler
  */
+
+console.log(path.join(__dirname,"../../public/index.html"))
 const notFound = (req, res, next) => {
-res.send("this is wild card")
+res.sendFile(path.join(__dirname,"../../public/index.html"))
 };
 
 module.exports = { errorHandler, notFound };

@@ -67,20 +67,20 @@ The Babulal Jewellers frontend is a luxury-grade, fully responsive e-commerce st
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-org/babulal-jewellers.git
-cd babulal-jewellers/client
+git clone https://github.com/sanket-thakkar-404/Jewellery-Ecommerce
+cd client
 
 # Install dependencies
 npm install
 
 # Copy environment template
-cp .env.example .env.local
+cp .env .env.local
 
 # Start development server
 npm run dev
 ```
 
-The app will be available at `http://localhost:5173`.
+The app will be available at `http://localhost:8080`.
 
 ---
 
@@ -90,14 +90,14 @@ Create a `.env.local` file in the `client/` directory:
 
 ```env
 # API Configuration
-VITE_API_BASE_URL=http://localhost:5000/api/v1
+VITE_API_BASE_URL=http://localhost:3000/api/v1
 
 # Cloudinary (for direct upload widget — optional)
 VITE_CLOUDINARY_CLOUD_NAME=your_cloud_name
 
 # Application
 VITE_APP_NAME=Babulal Jewellers
-VITE_APP_URL=http://localhost:5173
+VITE_APP_URL=http://localhost:8080
 
 # Stripe (Sandbox)
 VITE_STRIPE_PUBLISHABLE_KEY=pk_test_xxxxx
@@ -427,3 +427,5 @@ VITE_STRIPE_PUBLISHABLE_KEY=pk_live_xxxxx
 ---
 
 *Maintained by the Babulal Jewellers Engineering Team.*
+
+created by Sanket Thakkar

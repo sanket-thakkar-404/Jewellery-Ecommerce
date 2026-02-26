@@ -39,7 +39,7 @@
 
 ```
 Production:  https://api.babulaljewellers.com/api/v1
-Development: http://localhost:5000/api/v1
+Development: http://localhost:3000/api/v1
 ```
 
 All endpoints are prefixed with `/api/v1/`. Future breaking changes will be released under `/api/v2/`.
@@ -681,3 +681,5 @@ Auth: Bearer {{access_token}}
 ---
 
 *API Documentation v1.0 · Babulal Jewellers*
+
+*created by Sanket Thakkar*
