@@ -1,6 +1,5 @@
 import { Package, MessageSquare, Eye, TrendingUp } from 'lucide-react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
-import { products, monthlyEnquiries,enquiries } from '@/lib/mockData';
 import {useDashboardStore} from '../../features/dashboard/context/dashboard.context.js'
 import { useEffect } from 'react';
 
@@ -23,15 +22,12 @@ if (!dashboard || dashboard.length === 0) {
   return <div className="p-8">Loading dashboard...</div>;
 }
 
-
-
   const currentMonthIndex = new Date().getMonth(); // 0–11
 const data = dashboard?.chartData || [];
 const nextFiveMonths = Array.from({ length: 6 }, (_, i) => {
   return data[(currentMonthIndex + i) % 12];
 });
 
-  console.log(dashboard)
 
   const stats = [
   {
@@ -42,7 +38,7 @@ const nextFiveMonths = Array.from({ length: 6 }, (_, i) => {
   },
   {
     label: 'Total Enquiries',
-    value: dashboard.totalEnquiries,
+    value: dashboard.kpis.totalEnquiries,
     icon: MessageSquare,
     change: '+3 this week',
   },
@@ -61,6 +57,7 @@ const nextFiveMonths = Array.from({ length: 6 }, (_, i) => {
   },
 ];
 
+console.log(dashboard)
 
   return (
     <div className="p-8 overflow-auto">
