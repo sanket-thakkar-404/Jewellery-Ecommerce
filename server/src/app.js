@@ -84,7 +84,7 @@ app.get('/health', (req, res) => {
 app.use('/api/auth', authLimiter, authRoutes);
 app.use('/api/products', productRoutes);
 app.use('/api/categories', categoryRoutes);
-app.use('/api/enquiries', enquiryRoutes);
+app.use('/api/enquiries',enquiryLimiter,enquiryRoutes);
 app.use('/api/admin/dashboard', dashboardRoutes);
 
 app.use("/*", (req, res) => {
