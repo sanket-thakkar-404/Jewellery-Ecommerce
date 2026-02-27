@@ -57,8 +57,6 @@ const nextFiveMonths = Array.from({ length: 6 }, (_, i) => {
   },
 ];
 
-console.log(dashboard)
-
   return (
     <div className="p-8 overflow-auto">
       <div className="mb-8">

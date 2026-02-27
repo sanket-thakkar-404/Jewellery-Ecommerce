@@ -15,10 +15,7 @@ export default function AdminEnquiries() {
       (e.productName || '').toLowerCase().includes(search.toLowerCase())
   );
 
-
   const selected = selectedId ? enquiry.find((e) => e._id === selectedId) : null;
-  console.log(selected)
-
   const markAsRead = async(id: string,currentStatus: string) => { 
   if (currentStatus !== "new") {
     return;

@@ -5,6 +5,7 @@ const cors = require('cors');
 const cookieParser = require('cookie-parser');
 const rateLimit = require('express-rate-limit');
 const { httpLogger } = require('./utils/logger');
+const path = require("path")
 
 // Import routes
 const authRoutes = require('./routes/auth.routes');
@@ -19,6 +20,7 @@ const { errorHandler, notFound } = require('./middleware/error.middleware');
 const app = express();
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
+app.use(express.static("./public"))
 
 // ─── Security middleware ─────────────────────────────────────────────────────
 app.use(helmet({
@@ -82,11 +84,11 @@ app.get('/health', (req, res) => {
 app.use('/api/auth', authLimiter, authRoutes);
 app.use('/api/products', productRoutes);
 app.use('/api/categories', categoryRoutes);
-app.use('/api/enquiries', enquiryLimiter, enquiryRoutes);
+app.use('/api/enquiries', enquiryRoutes);
 app.use('/api/admin/dashboard', dashboardRoutes);
 
-app.use("*name", (req, res) => {
-    res.send("this is wild card")
+app.use("/*", (req, res) => {
+    res.sendFile(path.join(__dirname , "../public/index.html"))
 })
 
 // ─── Error handling ──────────────────────────────────────────────────────────

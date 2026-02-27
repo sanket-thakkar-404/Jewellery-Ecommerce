@@ -43,7 +43,18 @@ export default function Enquiry() {
 
   const handleSubmit = async(e: React.FormEvent) => {
     e.preventDefault();
-    const result = enquirySchema.safeParse(form);
+
+      const payload = {
+        name : form.name,
+        email : form.email,
+        phone: form.phone,
+        product:form.product,
+        productName : form.productName,
+        message : form.message
+      }
+
+
+    const result = enquirySchema.safeParse(payload);
     if (!result.success) {
       const fieldErrors: Record<string, string> = {};
       result.error.issues.forEach((issue) => {
@@ -53,12 +64,11 @@ export default function Enquiry() {
       setErrors(fieldErrors);
       return;
     }else {
-      const res = await createEnquiry(form)
+      const res = await createEnquiry(payload)
       if(res.success){
         setSubmitted(true);
         toast.success('Enquiry sent successfully!');
       }
-      console.log(form)
     }
   };
 
@@ -131,7 +141,7 @@ export default function Enquiry() {
             </label>
 
             <select
-              name="productId"
+              name="product"
               value={form.product}
               onChange={(e) => {
                 const selected = products.find(p => p.id === e.target.value);

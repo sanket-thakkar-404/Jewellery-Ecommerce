@@ -60,13 +60,13 @@ const buildEnquiryEmailHtml = (enquiry, productName) => `
  * Public: submit an enquiry
  */
 const createEnquiry = catchAsync(async (req, res) => {
-    const { name, email, phone, productName,productId, message } = req.body;
+    const { name, email, phone,productName,product, message } = req.body;
 
     const enquiry = await Enquiry.create({
         name,
         email,
-        phone: phone || '',
-        product: productId || null,
+        phone,
+        product,
         productName,
         message,
         ipAddress: req.ip,

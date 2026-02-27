@@ -138,6 +138,8 @@ const schemas = {
             .pattern(/^[+]?[\d\s\-().]{7,20}$/)
             .allow('', null),
         message: Joi.string().trim().max(2000).required(),
+        product: Joi.string().required(),
+        productName: Joi.string().optional(),
     }),
 };
 
